@@ -30,6 +30,9 @@ then
         echo "Available networks:"
         echo
         echo "1. Elias_Network"
+        echo
+        echo "2. uiavpn-2.0"
+        echo
 
         read -p "Connect to: " CHOICE
 
@@ -37,7 +40,11 @@ then
         then
             echo
 	        sudo zerotier-cli join $ELIAS_NETWORK; echo
-    fi
+        elif [ $CHOICE -eq 2 ]
+        then
+            echo
+            sudo zerotier-cli join $UIAVPN; echo
+        fi
 
     else
         echo "Goodbye!"
